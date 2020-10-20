@@ -12,10 +12,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Compiled Version - obsolete webpack compiled',
-      filename: 'index.html'
+      filename: 'index.html',
+      template: 'src/index.ejs'
     }),
     new ObsoleteWebpackPlugin({
-      template: '<div>Your browser is not supported. <button id="obsoleteClose">&times;</button></div>',
+      template: '<div id="obsolete-browser-cont"><div id="obsolete-browser-alert"><p>Sorry, your browser is not supported.</p><p> Please try our website on a different device!</p><button id="obsoleteClose">&times;</button></div></div>',
       browsers: supportedBrowsers
     })
   ]
